@@ -8,7 +8,7 @@ import hightelecom from '../../images/hightelecom.webp';
 import ebanx from '../../images/ebanx.png';
 import zendesk from '../../images/zendesk.png';
 
-const Slideshow = ({children}) => {
+const Slideshow = () => {
 
   return (
     <div className='slider'>

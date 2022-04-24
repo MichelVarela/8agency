@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdClose } from 'react-icons/md';
 
 const Modal = () => {
 
     const [close, setClose] = useState(false);
+
+    useEffect(() => {
+
+      if (close === true) {
+        setTimeout(() => {
+          setClose(false);
+        }, 3000);
+      }
+      
+    }, [close]);
 
   return (
     <div className={ close ? 'modal close-modal' : 'modal' }>

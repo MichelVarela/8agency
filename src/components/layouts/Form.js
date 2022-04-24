@@ -18,6 +18,7 @@ const initialForm = {
 const Form = () => {
 
   const [countries, setCountries] = useState([]);
+  const [mail, setMails] = useState([]);
 
   useEffect(() => {
     
@@ -33,11 +34,21 @@ const Form = () => {
       setCountries(country);
     }
 
+    const getMails = async () => {
+      
+      const res = await axios('http://localhost:4000/register-confirmed');
+      const {data} = res;
+      const registers = data.registers.map(({email}) => email);
+
+      setMails(registers);
+    }
+
     getCountry();
+    getMails();
 
   }, []);
 
-  const {form, errors, check, response, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm);
+  const {form, errors, check, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm);
 
   return (
     <div className="content-form">
@@ -97,6 +108,18 @@ const Form = () => {
         </div>
         <button>Inscríbete</button>
       </form>
+      <div className="errors">
+        {
+          mail.map(el => {
+            if (el === form.email) {
+              return <span key={el}>Usuario registrado</span>
+            }
+          })
+        }
+        {
+          errors.name || errors.surname || errors.email || errors.country || errors.phone || errors.job ? <span>Faltan completar campos</span> : null
+        }
+      </div>
       {
         check === true ? <Modal/> : null
       }

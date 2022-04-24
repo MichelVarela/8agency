@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const useForm = (initialForm, validationsForm) => {
@@ -6,7 +6,7 @@ export const useForm = (initialForm, validationsForm) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [check, setCheck] = useState(false);
-    const [response, setResponde] = useState(null);
+    const [response, setResponse] = useState(null);
 
     const handleChange = e => {
         const {name, value} = e.target;
@@ -26,12 +26,22 @@ export const useForm = (initialForm, validationsForm) => {
         try {
           const res = await axios.post('http://localhost:4000/register', form);
           setCheck(true);
-          console.log(res);
+          setResponse(res);
         } catch (err) {
           console.log(err);
         }
       }
     }
+
+    useEffect(() => { 
+      
+      if (check === true) {
+        setTimeout(() => {
+          setCheck(false);
+        }, 5000);
+      }
+
+    }, [check]);
 
   return { form, errors, check, response, handleChange, handleBlur, handleSubmit }
 }
