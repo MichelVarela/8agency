@@ -24,7 +24,7 @@ export const useForm = (initialForm, validationsForm) => {
 
       if (Object.keys(errors).length === 0) {
         try {
-          const res = await axios.post('http://localhost:4000/register', form);
+          const res = await axios.post('https://backbys.herokuapp.com/register', form);
           setCheck(true);
           setResponse(res);
         } catch (err) {
