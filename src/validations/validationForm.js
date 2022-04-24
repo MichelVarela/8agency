@@ -22,7 +22,7 @@ export const validationsForm = form => {
       errors.email = false;
     }
     
-    if (!form.country.trim()) {
+    if (!form.country.trim() || form.country.trim() === 'Selecciona un país') {
       errors.country = true;
     } else {
       errors.country = false;

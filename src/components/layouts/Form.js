@@ -52,7 +52,7 @@ const Form = () => {
   }, []);
 
   const {form, errors, check, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm);
-
+  
   return (
     <div className="content-form">
       <h2>¡Inscríbete y reserva tu lugar ahora!</h2>
