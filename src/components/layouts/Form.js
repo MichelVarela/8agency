@@ -6,6 +6,9 @@ import { validationsForm } from '../../validations/validationForm';
 // components 
 import Modal from './Modal';
 
+// images
+import confirmed from '../../images/check-square.png';
+
 const initialForm = {
   name:'',
   surname: '',
@@ -36,9 +39,9 @@ const Form = () => {
 
     const getMails = async () => {
       
-      const res = await axios('https://backbys.herokuapp.com/registerConfirmed');
+      const res = await axios('http://localhost:4000/api/registerConfirmed');
       const {data} = res;
-      const registers = data.registers.map(({email}) => email);
+      const registers = data.data.registers.map(({email}) => email);
 
       setMails(registers);
     }
@@ -61,6 +64,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.name} 
           className={ errors.name ? 'incorrect' : null } />
+          <img src={confirmed} alt='check-square' className={ errors.name === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
           <label htmlFor="surname">Apellido</label>
@@ -69,6 +73,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.surname} 
           className={ errors.surname ? 'incorrect' : null } />
+          <img src={confirmed} alt='check-square' className={ errors.surname === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
           <label htmlFor="email">Correo electrónico del trabajo</label>
@@ -77,6 +82,15 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.email} 
           className={ errors.email ? 'incorrect' : null } />
+          {
+            mail.map(el => {
+              if (el === form.email) {
+                errors.email = true;
+                return <span key={el}>Usuario registrado</span>
+              }
+            })
+          }
+          <img src={confirmed} alt='check-square' className={ errors.email === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
           <label htmlFor="country">País</label>
@@ -90,6 +104,7 @@ const Form = () => {
               countries.map(el => <option key={el}>{el}</option>)
             }
           </select>
+          <img src={confirmed} alt='check-square' className={ errors.country === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
           <label htmlFor="phone">Número de teléfono</label>
@@ -98,6 +113,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.phone} 
           className={ errors.phone ? 'incorrect' : null } />
+          <img src={confirmed} alt='check-square' className={ errors.phone === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
           <label htmlFor="job">Puesto de trabajo</label>
@@ -106,21 +122,10 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.job} 
           className={ errors.job ? 'incorrect' : null } />
+          <img src={confirmed} alt='check-square' className={ errors.job === false ? 'off on' : 'off' }/>
         </div>
         <button>Inscríbete</button>
       </form>
-      <div className="errors">
-        {
-          mail.map(el => {
-            if (el === form.email) {
-              return <span key={el}>Usuario registrado</span>
-            }
-          })
-        }
-        {
-          errors.name || errors.surname || errors.email || errors.country || errors.phone || errors.job ? <span>Faltan completar campos</span> : null
-        }
-      </div>
       {
         check === true ? <Modal/> : null
       }

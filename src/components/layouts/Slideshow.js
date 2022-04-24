@@ -1,12 +1,12 @@
 import React from 'react';
 
 // images
-import cluster from '../../images/cluster.png';
-import asobanca from '../../images/asobanca.png';
-import ipbf from '../../images/ipbf.png';
-import hightelecom from '../../images/hightelecom.webp';
-import ebanx from '../../images/ebanx.png';
-import zendesk from '../../images/zendesk.png';
+import cluster from '../../images/brands/cluster.png';
+import asobanca from '../../images/brands/asobanca.png';
+import ipbf from '../../images/brands/ipbf.png';
+import hightelecom from '../../images/brands/hightelecom.webp';
+import ebanx from '../../images/brands/ebanx.png';
+import zendesk from '../../images/brands/zendesk.png';
 
 const Slideshow = () => {
 

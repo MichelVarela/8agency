@@ -6,26 +6,38 @@ export const validationsForm = form => {
     
     if (!form.name.trim() || !regexName.test(form.name.trim())) {
       errors.name = true;
-    } 
+    } else {
+      errors.name = false;
+    }
     
     if (!form.surname.trim() || !regexName.test(form.surname.trim())) {
       errors.surname = true;
+    } else {
+      errors.surname = false;
     }
     
     if (!form.email.trim() || !regexEmail.test(form.email.trim())) {
       errors.email = true;
-    } 
+    } else {
+      errors.email = false;
+    }
     
     if (!form.country.trim()) {
       errors.country = true;
+    } else {
+      errors.country = false;
     }
     
     if (!form.phone.trim()) {
       errors.phone = true;
+    } else {
+      errors.phone = false;
     }
     
     if (!form.job.trim()) {
       errors.job = true;
+    } else {
+      errors.job = false;
     }
     
     return errors;
