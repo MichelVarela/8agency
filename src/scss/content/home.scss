@@ -1,0 +1,57 @@
+@use '../base/vars.scss' as v;
+
+main.home {
+    width: 90%;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: 'a' 'b' 'c' 'd';
+    margin: 100px auto;
+
+    .slider {
+        grid-area: a;
+    }
+
+    section {
+        grid-area: b;
+    }
+
+    .content-logos {
+        grid-area: c;
+    }
+
+    .content-form {
+        grid-area: d;
+    }
+
+    section {
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 565px; 
+        min-height: 820px;
+
+        p {
+            font-family: 'ProximaNova-Regular';
+            font-size: 16px;
+            letter-spacing: 0;
+            color: v.$letter-tr;
+        }
+
+        .cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main.home {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 'a d' 'b d' 'c d';
+    }
+}
+

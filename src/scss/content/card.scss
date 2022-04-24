@@ -1,0 +1,25 @@
+@use '../base/vars.scss' as v;
+
+.card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    img {
+        width: 74px;
+    }
+
+    .text-content {
+        h3 {
+            font-family: 'SharpSansNo1-Semibold';
+            color: v.$letter-pr;
+            margin-bottom: 5px;
+        }
+    
+        span {
+            font-family: 'SharpSansNo1-Medium';
+            font-size: 16px;
+            color: v.$letter-sec;
+        }
+    }
+} 

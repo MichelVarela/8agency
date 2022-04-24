@@ -1,0 +1,46 @@
+@use '../base/vars' as v;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: rgba($color: #000000, $alpha: .5);
+
+    .content-modal { 
+        position: relative;
+        max-width: 645px;
+        padding: 50px 20px;
+        background: v.$white;
+        text-align: center;
+        line-height: 28px;
+
+        .button-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        h3 {
+            font-family: 'SharpSansNo1-Semibold';
+            color: v.$letter-pr;
+        }
+
+        h4 {
+            font-family: 'SharpSansNo1-Medium';
+            font-size: 16px;
+            color: v.$letter-sec;
+        }
+    }
+}
+
+.close-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out .3s;
+}

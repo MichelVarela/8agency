@@ -1,0 +1,25 @@
+.content-logos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    img {
+        width: 75px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content-logos {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .content-logos {
+        flex-wrap: nowrap;
+    }
+}

@@ -1,0 +1,48 @@
+@use '../base/vars.scss' as v;
+
+footer {
+    padding: 20px 0;
+    background: v.$bg-form;
+    min-height: 160px;
+
+    .content-footer {
+        width: 90%;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px 0;
+        border-bottom: 1px solid v.$circle;
+
+        span {
+            font-family: 'ProximaNova-Regular';
+            font-size: 16px;
+            color: v.$letter-tr;
+        }
+    
+        section {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            .content-logo-redes {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: v.$circle;
+        
+                img {
+                    width: 20px;
+                    height: 20px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use '../base/vars' as v;
+
+header {
+    width: 100%;
+    min-height: 350px;
+    padding: 50px 20px;
+    background: url('../../images/Group\ 4.svg');
+    background-size: cover;
+
+    .content-header {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        text-align: center;
+
+        button {
+            width: 100px;
+            margin: 0 auto;
+            padding: 5px 13px;
+            border: none;
+            border-radius: 2px;
+            font-family: 'SharpSansNo1-Bold';
+            font-size: 13px;
+            letter-spacing: 0.93px;
+            text-transform: uppercase;
+            color: v.$white;
+            background: v.$orange;
+        }
+
+        h3 {
+            font-family: 'SharpSansNo1-Bold';
+            font-size: 40px;
+            color: v.$letter-pr;
+        }
+
+        h4 {
+            font-family: 'SharpSansNo1-BoldItalic';
+            font-size: 40px;
+            color: v.$letter-pr;
+        }
+
+        span {
+            font-family: 'SharpSansNo1-Semibold';
+            font-size: 21px;
+            text-transform: uppercase;
+            color: v.$letter-sec;
+        }
+        
+    }
+}
+
