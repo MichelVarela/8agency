@@ -1,9 +1,9 @@
-$animationSpeed: 17s;
+$animationSpeed: 15s;
 
 // Animation
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-75px * 7))}
+	100% { transform: translateX(calc(-125px * 6))} // width total (incluye gap) * la mitad de la cant total de img
 }
 
 // Styling
@@ -19,7 +19,7 @@ $animationSpeed: 17s;
 		display: flex;
         gap: 50px;
         align-items: center;
-		width: calc(75px * 14);
+		width: calc(125px * 12); // width total (incluye gap) * la cant total de img
 
         &:hover {
             animation-play-state: paused;

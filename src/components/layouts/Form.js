@@ -36,7 +36,7 @@ const Form = () => {
 
     const getMails = async () => {
       
-      const res = await axios('http://localhost:4000/register-confirmed');
+      const res = await axios('https://backbys.herokuapp.com/registerConfirmed');
       const {data} = res;
       const registers = data.registers.map(({email}) => email);
 
@@ -85,6 +85,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.country} 
           className={ errors.country ? 'incorrect' : null } >
+            <option>Selecciona un país</option>
             {
               countries.map(el => <option key={el}>{el}</option>)
             }

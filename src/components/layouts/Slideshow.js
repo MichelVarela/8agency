@@ -25,8 +25,6 @@ const Slideshow = () => {
             <div className="slide"><img src={hightelecom} alt="logo-hightelecom" /></div>
             <div className="slide"><img src={ebanx} alt="logo-ebanx" /></div>
             <div className="slide"><img src={zendesk} alt="logo-zendesk" /></div>
-            <div className="slide"><img src={cluster} alt="logo-cluster" /></div>
-            <div className="slide"><img src={asobanca} alt="logo-asobanca" /></div>
         </div>
     </div>
   )
