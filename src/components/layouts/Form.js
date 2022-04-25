@@ -23,6 +23,8 @@ const Form = () => {
   const [countries, setCountries] = useState([]);
   const [mail, setMails] = useState([]);
 
+  const {form, errors, check, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm);
+
   useEffect(() => {
     
     const getCountry = async () => {
@@ -50,8 +52,6 @@ const Form = () => {
     getMails();
 
   }, []);
-
-  const {form, errors, check, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationsForm);
   
   return (
     <div className="content-form">

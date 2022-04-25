@@ -22,7 +22,7 @@ export const useForm = (initialForm, validationsForm) => {
       e.preventDefault();
       setErrors(validationsForm(form));
 
-      if (Object.keys(errors).length === 0) {
+      if (!errors.name && !errors.surname && !errors.email && !errors.country && !errors.phone && !errors.job) {
         try {
           const res = await axios.post('http://localhost:4000/api/register', form);
           setCheck(true);
