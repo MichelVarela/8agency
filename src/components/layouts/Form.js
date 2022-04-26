@@ -41,7 +41,7 @@ const Form = () => {
 
     const getMails = async () => {
       
-      const res = await axios('http://localhost:4000/api/registerConfirmed');
+      const res = await axios('https://backbys.herokuapp.com/api/registerConfirmed');
       const {data} = res;
       const registers = data.data.registers.map(({email}) => email);
 
