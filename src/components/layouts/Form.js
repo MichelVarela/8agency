@@ -52,8 +52,6 @@ const Form = () => {
     getMails();
 
   }, []);
-
-  console.log(errors.name);
   
   return (
     <div className="content-form">
