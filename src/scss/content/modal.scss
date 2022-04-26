@@ -14,11 +14,14 @@
 
     .content-modal { 
         position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         max-width: 645px;
-        padding: 50px 20px;
+        min-height: 280px;
+        padding: 20px;
         background: v.$white;
-        text-align: center;
-        line-height: 28px;
 
         .button-close {
             position: absolute;
@@ -27,15 +30,20 @@
             cursor: pointer;
         }
 
-        h3 {
-            font-family: 'SharpSansNo1-Semibold';
-            color: v.$letter-pr;
-        }
+        .modal-text {
+            text-align: center;
+            line-height: 28px;
 
-        h4 {
-            font-family: 'SharpSansNo1-Medium';
-            font-size: 16px;
-            color: v.$letter-sec;
+            h3 {
+                font-family: 'SharpSansNo1-Semibold';
+                color: v.$letter-pr;
+            }
+    
+            h4 {
+                font-family: 'SharpSansNo1-Medium';
+                font-size: 16px;
+                color: v.$letter-sec;
+            }
         }
     }
 }

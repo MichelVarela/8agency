@@ -41,7 +41,7 @@ const Form = () => {
 
     const getMails = async () => {
       
-      const res = await axios('https://backbys.herokuapp.com/api/registerConfirmed');
+      const res = await axios('https://backbys.herokuapp.com/api/inscriptos');
       const {data} = res;
       const registers = data.data.registers.map(({email}) => email);
 
@@ -52,6 +52,8 @@ const Form = () => {
     getMails();
 
   }, []);
+
+  console.log(errors.name);
   
   return (
     <div className="content-form">
@@ -64,6 +66,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.name} 
           className={ errors.name ? 'incorrect' : null } />
+          { errors.name ? <span>{errors.name}</span> : null }
           <img src={confirmed} alt='check-square' className={ errors.name === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
@@ -73,6 +76,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.surname} 
           className={ errors.surname ? 'incorrect' : null } />
+          { errors.surname ? <span>{errors.surname}</span> : null }
           <img src={confirmed} alt='check-square' className={ errors.surname === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
@@ -82,6 +86,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.email} 
           className={ errors.email ? 'incorrect' : null } />
+          { errors.email ? <span>{errors.email}</span> : null }
           {
             mail.map(el => {
               if (el === form.email) {
@@ -104,6 +109,7 @@ const Form = () => {
               countries.map(el => <option key={el}>{el}</option>)
             }
           </select>
+          { errors.country ? <span>{errors.country}</span> : null }
           <img src={confirmed} alt='check-square' className={ errors.country === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
@@ -113,6 +119,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.phone} 
           className={ errors.phone ? 'incorrect' : null } />
+          { errors.phone ? <span>{errors.phone}</span> : null }
           <img src={confirmed} alt='check-square' className={ errors.phone === false ? 'off on' : 'off' }/>
         </div>
         <div className='content-input'>
@@ -122,6 +129,7 @@ const Form = () => {
           onChange={ handleChange } 
           value={form.job} 
           className={ errors.job ? 'incorrect' : null } />
+          { errors.job ? <span>{errors.job}</span> : null }
           <img src={confirmed} alt='check-square' className={ errors.job === false ? 'off on' : 'off' }/>
         </div>
         <button>Inscríbete</button>
