@@ -20,7 +20,7 @@ main.home {
         grid-area: c;
     }
 
-    .content-form {
+    .content-grid-form {
         grid-area: d;
     }
 
@@ -45,6 +45,11 @@ main.home {
             flex-wrap: wrap;
             flex-direction: column;
         }
+    }
+
+    .content-grid-form {
+        max-width: 463px;
+        margin: 0 auto;
     }
 }
 

@@ -47,7 +47,7 @@ const Home = () => {
         <p>¡Te esperamos!</p>
       </section>
       <Logos/>
-      <Form/>
+      <div className="content-grid-form"><Form/></div>
     </main>
   )
 }

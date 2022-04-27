@@ -1,9 +1,8 @@
 @use '../base/vars.scss' as v;
 
 .content-form {
-    max-width: 463px;
-    margin: 0 auto;
-    padding: 50px 20px;
+    width: 100%;
+    padding: 50px 20px 100px;
     background: v.$bg-form;
 
     h2 {
